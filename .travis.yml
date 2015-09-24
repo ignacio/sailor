@@ -16,7 +16,7 @@ env:
     - DB_NAME=sailor_test
 
   matrix:
-    - LUA=lua5.1
+    #- LUA=lua5.1
     - LUA=lua5.2
     # - LUA=lua5.3
     # - LUA=luajit     # latest stable version (2.0.3)
