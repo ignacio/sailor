@@ -2,6 +2,11 @@ language: c
 
 sudo: false
 
+addons:
+  apt:
+    packages:
+    - libmysqlclient-dev
+
 env:
   global:
     - LUAROCKS=2.2.2
