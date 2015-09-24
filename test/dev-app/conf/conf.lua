@@ -2,7 +2,6 @@
 local db_driver, db_user, db_pass, db_name
 
 if os.getenv("TRAVIS") == "true" then
-	print("Yup, I'm on Travis")
 	db_driver = assert(os.getenv("DB_DRIVER"))
 	db_user = assert(os.getenv("DB_USER"))
 	db_pass = os.getenv("DB_PASS")
