@@ -10,6 +10,11 @@ addons:
 env:
   global:
     - LUAROCKS=2.2.2
+    - DB_DRIVER=mysql
+    - DB_USER=travis
+    #- DB_PASS=
+    #- DB_NAME=
+
   matrix:
     - LUA=lua5.1
     # - LUA=lua5.2
