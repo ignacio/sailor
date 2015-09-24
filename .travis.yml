@@ -37,7 +37,8 @@ before_script:
 
 script:
   - cd test/dev-app
-  - sailor test --verbose
+  #- sailor test --verbose
+  - busted --helper=tests/bootstrap.lua --verbose tests/unit/* tests/functional/*
 
 notifications:
   email:
