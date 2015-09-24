@@ -18,7 +18,7 @@ before_install:
   - source .travis/setenv_lua.sh
 
 install:
-  - luarocks make rockspecs/sailor-0.5-1.rockspec
+  - luarocks make rockspecs/sailor-0.4-1.rockspec
 
 script:
   - cd test/dev-app
