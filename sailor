@@ -143,9 +143,7 @@ local function run()
 end
 
 local exit_code = run()
-print(exit_code)
 if exit_code and exit_code ~= 0 then
 	-- exit code sometimes is > 255 and fails to be propagated
-	print("exiting", _VERSION, exit_code)
 	os.exit(1, true)
 end
