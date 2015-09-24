@@ -140,4 +140,6 @@ local function run()
 	end
 end
 
-return run()
+local exit_code = run()
+print("exit_code", exit_code)
+return exit_code
