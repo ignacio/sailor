@@ -141,4 +141,4 @@ local function run()
 end
 
 local exit_code = run()
-os.exit(tonumber(exit_code) or -1, true)
+os.exit(tonumber(exit_code) or 0, true)
