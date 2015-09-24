@@ -13,7 +13,7 @@ env:
     - DB_DRIVER=mysql
     - DB_USER=travis
     #- DB_PASS=
-    #- DB_NAME=
+    - DB_NAME=sailor_test
 
   matrix:
     - LUA=lua5.1
@@ -30,6 +30,9 @@ before_install:
 
 install:
   - luarocks make rockspecs/sailor-0.5-1.rockspec
+
+before_script:
+  - mysql -e 'create database sailor_test;'
 
 script:
   - cd test/dev-app
