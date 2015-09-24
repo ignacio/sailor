@@ -141,9 +141,4 @@ local function run()
 end
 
 local exit_code = run()
-if _VERSION:match("5%.1$") then
-	print("exit_code", exit_code)
-	os.exit(tonumber(exit_code))
-end
-
-return exit_code
+os.exit(tonumber(exit_code) or -1, true)
