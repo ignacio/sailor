@@ -16,22 +16,13 @@ env:
 
 before_install:
   - source .travis/setenv_lua.sh
-  - pip install --user cpp-coveralls
-  - luarocks install Lua-cURL         --server=https://luarocks.org/dev
-  - luarocks install luacov-coveralls --server=https://luarocks.org/dev
-  - luarocks install lunitx
 
 install:
   - luarocks make rockspecs/sailor-current-1.rockspec
 
 script:
-  - cd test
-  - lua -e "print(require'cURL'.version())"
-  - lunit.sh test.lua
-
-after_success:
-  # - coveralls -b .. -r .. -i ./src --dump c.report.json
-  # - luacov-coveralls -j c.report.json -v
+  - cd test/dev-app
+  - sailor test --verbose
 
 notifications:
   email:
