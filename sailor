@@ -141,7 +141,7 @@ local function run()
 end
 
 local exit_code = run()
-print(exit_code)
-print(tonumber(exit_code))
-print(tonumber(exit_code) or 0)
-os.exit(tonumber(exit_code) or 0)
+if exit_code and exit_code ~= 0 then
+	-- exit code sometimes is > 255 and fails to be propagated
+	os.exit(1, true)
+end
