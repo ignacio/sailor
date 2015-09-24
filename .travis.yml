@@ -16,7 +16,7 @@ env:
     - DB_NAME=sailor_test
 
   matrix:
-    #- LUA=lua5.1
+    - LUA=lua5.1
     - LUA=lua5.2
     # - LUA=lua5.3
     # - LUA=luajit     # latest stable version (2.0.3)
@@ -33,7 +33,7 @@ install:
 
 before_script:
   - mysql -e 'create database sailor_test;'
-  - mysql $DB_NAME < test/dev-app/sql/mysql.sql
+  #- mysql $DB_NAME < test/dev-app/sql/mysql.sql
 
 script:
   - cd test/dev-app
