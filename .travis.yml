@@ -33,6 +33,7 @@ install:
 
 before_script:
   - mysql -e 'create database sailor_test;'
+  - mysql < test/dev-app/sql/mysql.sql
 
 script:
   - cd test/dev-app
