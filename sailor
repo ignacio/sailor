@@ -96,7 +96,7 @@ local function test()
 	for i=2,#arg do
 		flags = flags..arg[i]..' '
 	end
-	os.execute('busted --helper=tests/bootstrap.lua '..flags..'tests/unit/* tests/functional/*')
+	return os.execute('busted --helper=tests/bootstrap.lua '..flags..'tests/unit/* tests/functional/*')
 end
 
 local function enable()
@@ -132,7 +132,7 @@ local function run()
 	if (arg[1] == 'create' or arg[1] == 'c') and arg[2] then
 		create()
 	elseif arg[1] == 'test' or arg[1] == 't' then
-		test()
+		return test()
 	elseif arg[1] == 'enable' and arg[2] then
 		enable()
 	else
@@ -140,4 +140,4 @@ local function run()
 	end
 end
 
-run()
+return run()
