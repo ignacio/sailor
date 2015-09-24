@@ -141,4 +141,7 @@ local function run()
 end
 
 local exit_code = run()
+print(exit_code)
+print(tonumber(exit_code))
+print(tonumber(exit_code) or 0)
 os.exit(tonumber(exit_code) or 0, true)
